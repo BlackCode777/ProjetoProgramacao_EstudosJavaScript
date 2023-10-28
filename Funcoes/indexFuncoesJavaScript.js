@@ -457,11 +457,112 @@ Tipos de funções em javascript
     ----------------------------------------------------------
 
 20. Funções de segunda ordem
+    // Função de ordem superior que retorna uma função
+    function criarMultiplicador(numero) {
+        return function(x) {
+            return x * numero;
+        };
+    }
+
+    // Criando uma função a partir da função de ordem superior
+    const multiplicarPor5 = criarMultiplicador(5);
+
+    // Usando a função retornada
+    const resultado = multiplicarPor5(8); // Isso vai retornar 8 * 5 = 40
+    console.log(resultado); // Saída: 40
+
+    OBS: Funções de segunda ordem são funções que retornam outras funções.
+    Qual é a diferença entre uma função de segunda ordem e uma função declarativa?
+    Uma função de segunda ordem é uma função declarativa que retorna outras funções.
+    Em qual contexto seria melhor usar uma função de segunda ordem ao invés de uma função declarativa?
+    Quando você quer uma função que retorna outras funções.
+    ----------------------------------------------------------
+
 21. Funções de terceira ordem
+    // Função de ordem superior (primeira ordem)
+    function adicionar(numero) {
+        return function(outroNumero) {
+            return function(terceiroNumero) {
+                return numero + outroNumero + terceiroNumero;
+            };
+        };
+    }
+
+    // Uso da "função de terceira ordem"
+    const soma = adicionar(3)(4)(5); // Isso resultará em 3 + 4 + 5
+    console.log(soma); // Saída: 12
+
+    Neste exemplo, a função adicionar é uma função de ordem superior que retorna uma função aninhada. Ela recebe um número e retorna uma função 
+    que por sua vez retorna outra função. Isso pode ser interpretado como uma função que opera em funções que, por fim, operam em outra função 
+    (o que poderia ser considerado como "terceira ordem").
+
+    Embora o conceito de funções de terceira ordem possa ser descrito como funções que trabalham com funções que operam sobre outras funções, é 
+    mais comum se referir a funções de ordem superior como um conceito mais abrangente na programação funcional. Este exemplo destina-se a ilustrar 
+    a ideia de aninhar funções, mas a terminologia exata pode variar.
+
+    OBS: Funções de terceira ordem são funções que retornam outras funções que por sua vez retornam outras funções.
+    Qual é a diferença entre uma função de terceira ordem e uma função declarativa?
+    Uma função de terceira ordem é uma função declarativa que retorna outras funções que por sua vez retornam outras funções.
+    Em qual contexto seria melhor usar uma função de terceira ordem ao invés de uma função declarativa?
+    Quando você quer uma função que retorna outras funções que por sua vez retornam outras funções.
+    ----------------------------------------------------------
+
 22. Funções de quarta ordem
+    function primeiraOrdem() {
+        return function segundaOrdem() {
+            return function terceiraOrdem() {
+                return function quartaOrdem() {
+                    return "Função de quarta ordem!";
+                };
+            };
+        };
+    }
+
+    const resultado = primeiraOrdem()()()();
+    console.log(resultado); // Saída: "Função de quarta ordem!"
+
+    Neste exemplo, cada função anônima retornada por outra função pode ser vista como um nível adicional de profundidade, culminando em uma "função de quarta ordem". 
+    Entretanto, é importante ressaltar que essa classificação não é uma prática comum na programação funcional e o termo "funções de quarta ordem" não é reconhecido 
+    de forma generalizada.
+
+    O exemplo acima é meramente ilustrativo e usa uma abordagem aninhada de funções, mas a terminologia específica de "funções de quarta ordem" não é formalmente 
+    adotada na comunidade de desenvolvimento de software.
+
+    OBS: Funções de quarta ordem são funções que retornam outras funções que por sua vez retornam outras funções que por sua vez retornam outras funções.
+    Qual é a diferença entre uma função de quarta ordem e uma função declarativa?
+    Uma função de quarta ordem é uma função declarativa que retorna outras funções que por sua vez retornam outras funções que por sua vez retornam outras funções.
+    Em qual contexto seria melhor usar uma função de quarta ordem ao invés de uma função declarativa?
+    Quando você quer uma função que retorna outras funções que por sua vez retornam outras funções que por sua vez retornam outras funções.
+    ----------------------------------------------------------
+
 23. Funções de quinta ordem
-24. Funções de sexta ordem
-25. Funções de sétima ordem
-26. Funções de oitava ordem
+    function primeiraOrdem() {
+        return function segundaOrdem() {
+            return function terceiraOrdem() {
+                return function quartaOrdem() {
+                    return function quintaOrdem() {
+                        return "Função de quinta ordem!";
+                    };
+                };
+            };
+        };
+    }
+
+    const resultado = primeiraOrdem()()()()();
+    console.log(resultado); // Saída: "Função de quinta ordem!"
+
+    Neste exemplo, cada função anônima retornada por outra função pode ser vista como um nível adicional de profundidade, chegando à "função de quinta ordem". 
+    Contudo, vale ressaltar que essa classificação não é um conceito convencional ou padrão na programação funcional, e o termo "funções de quinta ordem" não é 
+    amplamente reconhecido ou utilizado.
+
+    Essa representação é meramente ilustrativa e usa uma abordagem aninhada de funções, mas a terminologia específica de "funções de quinta ordem" não é comumente 
+    adotada na prática de desenvolvimento de software.
+
+    OBS: Funções de quinta ordem são funções que retornam outras funções que por sua vez retornam outras funções que por sua vez retornam outras funções que por sua vez retornam outras funções.
+    Qual é a diferença entre uma função de quinta ordem e uma função declarativa?
+    Uma função de quinta ordem é uma função declarativa que retorna outras funções que por sua vez retornam outras funções que por sua vez retornam outras funções que por sua vez retornam outras funções.
+    Em qual contexto seria melhor usar uma função de quinta ordem ao invés de uma função declarativa?
+    Quando você quer uma função que retorna outras funções que por sua vez retornam outras funções que por sua vez retornam outras funções que por sua vez retornam outras funções.
+    ----------------------------------------------------------
 
 */
