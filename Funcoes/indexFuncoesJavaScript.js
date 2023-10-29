@@ -565,4 +565,134 @@ Tipos de funções em javascript
     Quando você quer uma função que retorna outras funções que por sua vez retornam outras funções que por sua vez retornam outras funções que por sua vez retornam outras funções.
     ----------------------------------------------------------
 
+    24. Funções com hoisting
+    Exemplo de função declarativa
+    function funcao() {
+        return "Hello World!";
+    }
+    Exemplo de função expressão
+    var funcao = function() {
+        return "Hello World!";
+    }
+    Exemplo de função construtora
+    function Pessoa(nome, idade) {
+        this.nome = nome;
+        this.idade = idade;
+    }
+    var pessoa = new Pessoa("Luiz", 62);
+    console.log(pessoa.nome); // Luiz
+    console.log(pessoa.idade); // 62
+    Exemplo de arrow function
+    var funcao = () => {
+        return "Hello World!";
+    }
+    Exemplo de função auto invocada
+    (function() {
+        console.log("Hello World!");
+    })();
+    Exemplo de função anônima
+    var funcao = function() {
+        return "Hello World!";
+    }
+    Exemplo de função callback
+    function funcao(callback) {
+        callback();
+    }
+    funcao(function() {
+        console.log("Hello World!");
+    });
+    Exemplo de função geradora
+    function* funcao() {
+        yield 1;
+        yield 2;
+        yield 3;
+    }
+    var it = funcao();
+    console.log(it.next().value); // 1
+    console.log(it.next().value); // 2
+    console.log(it.next().value); // 3
+    Exemplo de função assíncrona
+    ----------------------------------------------------------
+
+    25. Funções com escopo léxico
+    Exemplo de função com escopo léxico
+    function funcao() {
+        var nome = "Luiz";
+        console.log(nome);
+    }
+    ----------------------------------------------------------
+
+    26. Funções Com uso strict
+    Exemplo de função com uso strict
+    function funcao() {
+        "use strict";
+        var nome = "Luiz";
+        console.log(nome);
+    }
+    Outros exemplos de uso strict
+    function funcao() {
+        "use strict";
+        // ...
+    }
+    (function() {
+        "use strict";
+        // ...
+    })();
+
+    function exemploFuncaoStrict() {
+        'use strict'; // Declaração do modo estrito
+        // No strict mode, variáveis precisam ser declaradas com 'var', 'let' ou 'const'
+        variavelEstrita = 'Esta é uma variável estrita'; // Isso gerará um erro no modo estrito
+        return variavelEstrita;
+    }
+
+    exemploFuncaoStrict(); // Isso lançará um erro de referência à variável não declarada no modo estrito
+
+    Neste exemplo, ao executar exemploFuncaoStrict(), ocorrerá um erro de referência à variável não declarada, pois no     
+    strict mode, todas as variáveis devem ser declaradas corretamente com var, let ou const. A ausência do uso de uma 
+    declaração de variável apropriada fará com que o strict mode lance um erro.
+
+    A utilização do strict mode é útil para evitar comportamentos inesperados, melhorar a segurança e permitir uma escrita 
+    mais limpa e consistente de código JavaScript.
+    ----------------------------------------------------------
+
+    27. Funções com uso de debugger
+    Exemplo de função com uso de debugger
+    function funcao() {
+        debugger;
+        var nome = "Luiz";
+        console.log(nome);
+    } 
+    
+    function exemploFuncaoComDebugger() {
+        let numero = 10;
+        let multiplicador = 5;
+        // Uso do debugger para interromper a execução e iniciar a depuração
+        debugger;
+        // Operação matemática
+        let resultado = numero * multiplicador;
+        return resultado;
+    }
+    exemploFuncaoComDebugger(); // Quando executado no ambiente de desenvolvimento, o código será interrompido onde o 
+    debugger foi definido
+
+    Quando a função exemploFuncaoComDebugger() é chamada, a execução do código é interrompida no ponto onde a palavra-chave 
+    debugger é encontrada. Isso permite inspecionar variáveis, o estado do código e executar passo a passo em um ambiente 
+    de desenvolvimento que suporta depuração, como os consoles dos navegadores ou ferramentas de desenvolvimento.
+
+    É importante notar que o debugger só terá efeito em ambientes que suportam depuração. Em produção, ele não terá impacto, 
+    pois é ignorado na ausência de ferramentas de depuração ativas.
+    ----------------------------------------------------------
+
+
 */
+
+function exemploFuncaoComDebugger() {
+    let numero = 10;
+    let multiplicador = 5;
+    // Uso do debugger para interromper a execução e iniciar a depuração
+    debugger;
+    // Operação matemática
+    let resultado = numero * multiplicador;
+    return resultado;
+}
